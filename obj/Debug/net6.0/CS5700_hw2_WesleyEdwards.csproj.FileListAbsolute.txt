@@ -1,0 +1,15 @@
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/bin/Debug/net6.0/CS5700_hw2_WesleyEdwards
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/bin/Debug/net6.0/CS5700_hw2_WesleyEdwards.deps.json
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/bin/Debug/net6.0/CS5700_hw2_WesleyEdwards.runtimeconfig.json
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/bin/Debug/net6.0/CS5700_hw2_WesleyEdwards.dll
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/bin/Debug/net6.0/ref/CS5700_hw2_WesleyEdwards.dll
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/bin/Debug/net6.0/CS5700_hw2_WesleyEdwards.pdb
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.csproj.AssemblyReference.cache
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.GeneratedMSBuildEditorConfig.editorconfig
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.AssemblyInfoInputs.cache
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.AssemblyInfo.cs
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.csproj.CoreCompileInputs.cache
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.dll
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/ref/CS5700_hw2_WesleyEdwards.dll
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.pdb
+/home/wesley/school/oop/CS5700_hw2_WesleyEdwards/obj/Debug/net6.0/CS5700_hw2_WesleyEdwards.genruntimeconfig.cache
