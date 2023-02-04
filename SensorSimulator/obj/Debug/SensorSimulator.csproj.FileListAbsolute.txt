@@ -37,3 +37,17 @@ Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\Senso
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\SensorSimulator\bin\Debug\Messages.pdb
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.exe
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\bin\Debug\SensorSimulator.exe.config
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\bin\Debug\SensorSimulator.exe
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\bin\Debug\SensorSimulator.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\bin\Debug\Messages.dll
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\bin\Debug\Messages.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.csproj.AssemblyReference.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.Properties.Resources.resources
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.SimulationForm.resources
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.csproj.GenerateResource.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.csproj.CopyComplete
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.exe
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.pdb

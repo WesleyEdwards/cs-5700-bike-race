@@ -9,6 +9,7 @@ using System.Net.Sockets;
 
 using Messages;
 
+
 namespace DummyServer
 {
     public class DataReceiver
@@ -16,6 +17,7 @@ namespace DummyServer
         private UdpClient udpClient;
         private bool keepGoing;
         private Thread myRunThread;
+        public DataStore dataStore;
 
         public void Start()
         {
@@ -23,6 +25,7 @@ namespace DummyServer
             keepGoing = true;
             myRunThread = new Thread(new ThreadStart(Run));
             myRunThread.Start();
+            dataStore = new DataStore();
         }
 
         public void Stop()
@@ -45,11 +48,7 @@ namespace DummyServer
                         RacerStatus statusMessage = RacerStatus.Decode(messageByes);
                         if (statusMessage != null)
                         {
-                            Console.WriteLine("Race Bib #={0}, Sensor={1}, Time={2}",
-                                        statusMessage.RacerBibNumber,
-                                        statusMessage.SensorId,
-                                        statusMessage.Timestamp);
-
+                            dataStore.ReceiveInfo(statusMessage);
                             // A non-dummy server would do something intelligent with the message,
                             // like lookup the racer and update the last sensor and time
                         }

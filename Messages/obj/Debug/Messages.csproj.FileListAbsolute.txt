@@ -6,3 +6,9 @@ Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\Messa
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\Messages\bin\Debug\Messages.pdb
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\Messages\obj\Debug\Messages.dll
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\Messages\obj\Debug\Messages.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\bin\Debug\Messages.dll
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\bin\Debug\Messages.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj\Debug\Messages.csproj.AssemblyReference.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj\Debug\Messages.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj\Debug\Messages.dll
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj\Debug\Messages.pdb

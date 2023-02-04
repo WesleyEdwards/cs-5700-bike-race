@@ -22,3 +22,14 @@ Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\Dummy
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.csprojResolveAssemblyReference.cache
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.exe
 Y:\Box Sync\Classes\cs5700 2015 Fall\Homework\HW2\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.csproj.AssemblyReference.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.exe
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\DummyServer.exe.config
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\DummyServer.exe
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\DummyServer.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\Messages.dll
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\Messages.pdb
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.csproj.CopyComplete
