@@ -2,17 +2,16 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace DummyServer
 {
+    [Serializable]
     internal class RaceGroup
     {
         private List<Racer> racerList;
 
-        // The following properties characterize the group
         public int Id { get; set; }
         public string Label { get; set; }
         public int StartTime { get; set; }      // Milliseconds after race start time
@@ -21,18 +20,6 @@ namespace DummyServer
 
         // Not needed
         public List<Racer> Racers { get { return racerList; } }
-
-        public void Write(StreamWriter groupWriter, StreamWriter racerWriter)
-        {
-            groupWriter.WriteLine("{0},{1},{2},{3},{4}", Id, Label, StartTime, MinBibNumber, MaxBibNumber);
-            foreach (Racer racer in racerList)
-                racer.Write(racerWriter, Id);
-        }
-
-        public int Count
-        {
-            get { return racerList.Count; }
-        }
 
         public Racer this[int index]
         {

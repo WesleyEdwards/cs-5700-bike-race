@@ -33,3 +33,6 @@ C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\Messages.dll
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\Messages.pdb
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.csproj.CopyComplete
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.Form1.resources
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\obj\Debug\DummyServer.csproj.GenerateResource.cache
+C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\DummyServer\bin\Debug\Groups.csv

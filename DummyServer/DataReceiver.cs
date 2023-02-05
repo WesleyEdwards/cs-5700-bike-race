@@ -12,20 +12,23 @@ using Messages;
 
 namespace DummyServer
 {
-    public class DataReceiver
+    internal class DataReceiver
     {
         private UdpClient udpClient;
         private bool keepGoing;
         private Thread myRunThread;
         public DataStore dataStore;
 
+        public DataReceiver()
+        {
+            dataStore = new DataStore();
+        }
         public void Start()
         {
             udpClient = new UdpClient(14000);
             keepGoing = true;
             myRunThread = new Thread(new ThreadStart(Run));
             myRunThread.Start();
-            dataStore = new DataStore();
         }
 
         public void Stop()
