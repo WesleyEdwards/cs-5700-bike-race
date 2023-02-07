@@ -65,6 +65,10 @@
       <Link>Groups.csv</Link>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="..\SensorSimulator\bin\Debug\Racers.csv">
+      <Link>Racers.csv</Link>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
