@@ -12,3 +12,9 @@ C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj\Debug\Messages.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj\Debug\Messages.dll
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\Messages\obj\Debug\Messages.pdb
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\Messages\bin\Debug\Messages.dll
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\Messages\bin\Debug\Messages.pdb
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\Messages\obj\Debug\Messages.csproj.AssemblyReference.cache
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\Messages\obj\Debug\Messages.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\Messages\obj\Debug\Messages.dll
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\Messages\obj\Debug\Messages.pdb

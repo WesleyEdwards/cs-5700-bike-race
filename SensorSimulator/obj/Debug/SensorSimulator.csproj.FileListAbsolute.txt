@@ -51,3 +51,17 @@ C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimula
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.csproj.CopyComplete
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.exe
 C:\Users\User\Documents\wesley\RaceProject\SensorSimulator-Version2\SensorSimulator\obj\Debug\SensorSimulator.pdb
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\bin\Debug\SensorSimulator.exe.config
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\bin\Debug\SensorSimulator.exe
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\bin\Debug\SensorSimulator.pdb
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\bin\Debug\Messages.dll
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\bin\Debug\Messages.pdb
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.csproj.AssemblyReference.cache
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.csproj.SuggestedBindingRedirects.cache
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.Properties.Resources.resources
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.SimulationForm.resources
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.csproj.GenerateResource.cache
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.csproj.CopyComplete
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.exe
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\SensorSimulator\obj\Debug\SensorSimulator.pdb
