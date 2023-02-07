@@ -17,6 +17,11 @@ namespace DummyServer
         public int StartTime { get; set; }      // Milliseconds after race start time
         public int MinBibNumber { get; set; }
         public int MaxBibNumber { get; set; }
+        
+        public RaceGroup()
+        {
+            this.racerList = new List<Racer>();
+        }
 
         // Not needed
         public List<Racer> Racers { get { return racerList; } }
@@ -32,9 +37,9 @@ namespace DummyServer
             }
         }
 
-        public void AddRacer(RacerStatus status)
+        public void AddRacer(Racer racer)
         {
-            Console.WriteLine($"Racer {status.RacerBibNumber} in group {this.Id}");
+            Racers.Add(racer);
         }
     }
 }

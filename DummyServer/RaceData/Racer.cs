@@ -12,7 +12,8 @@ namespace DummyServer
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public int RaceBibNumber { get; set; }
-        public void Write(StreamWriter write, int groupId)
+        public int groupId { get; set; }
+        public void Write(StreamWriter write)
         {
             write.WriteLine("RACER: {0},{1},{2},{3}", FirstName, LastName, RaceBibNumber, groupId);
         }

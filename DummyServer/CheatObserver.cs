@@ -14,12 +14,15 @@ namespace DummyServer
             dataStore.UpdateMessage += DataStore_UpdateMessage;
         }
 
-        private void DataStore_UpdateMessage(Messages.RacerStatus obj)
+        private void DataStore_UpdateMessage(Messages.RacerStatus status)
         {
             if (raceGroups == null) { raceGroups = new RaceGroupInfo(); }
-            else { Console.WriteLine(raceGroups.raceGroups[0].ToString()); }
 
-            Console.WriteLine($"UPDATED MESSAGE {obj.RacerBibNumber}");
+            Racer racer = raceGroups.FindRacer(status);
+
+            if (racer != null) { Console.WriteLine(racer.FirstName); }
+            else { Console.WriteLine($"NO INFO FOR {status.RacerBibNumber}"); }
+
         }
     }
 }
