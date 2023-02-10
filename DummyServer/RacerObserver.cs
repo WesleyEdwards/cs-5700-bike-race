@@ -20,7 +20,7 @@ namespace DummyServer
 
         private void DataStore_UpdateMessage(Messages.RacerStatus status)
         {
-            if (raceGroups == null) { raceGroups = new RaceGroupInfo(); }
+            if (raceGroups == null) { raceGroups = new RaceGroupInfo("", ""); }
 
             foreach (var bib in this.BibNumbers)
             {

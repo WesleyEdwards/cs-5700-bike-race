@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DummyServer
 {
-    internal class Racer
+    public class Racer
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

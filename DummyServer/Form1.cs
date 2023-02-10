@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Messages;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,11 @@ namespace DummyServer
 {
     public partial class Form1 : Form
     {
+        
+        public string enteredGroupPath { get; set; }
+        public string enteredRacersPath { get; set; }
+
+        public event Action<string[]> SubmitRacerPaths;
         public Form1()
         {
             InitializeComponent();
@@ -28,6 +34,19 @@ namespace DummyServer
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void submit_Click(object sender, EventArgs e)
+        {
+            enteredGroupPath = groupsTextBox.Text;
+            enteredRacersPath = racersTextBox.Text;
+
+            this.SubmitRacerPaths(new string[] { enteredGroupPath,enteredRacersPath });
+        }
+
+        private void guessSubmit_Click(object sender, EventArgs e)
         {
 
         }

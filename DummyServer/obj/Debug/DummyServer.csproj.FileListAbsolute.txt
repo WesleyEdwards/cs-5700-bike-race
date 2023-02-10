@@ -52,3 +52,4 @@ C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\Du
 C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.csproj.CopyComplete
 C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.exe
 C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.pdb
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.Form2.resources

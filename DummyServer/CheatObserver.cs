@@ -23,7 +23,7 @@ namespace DummyServer
 
         private void DataStore_UpdateMessage(RacerStatus newStatus)
         {
-            if (raceGroups == null) { raceGroups = new RaceGroupInfo(); }
+            if (raceGroups == null) { raceGroups = new RaceGroupInfo("", ""); }
 
             this.statuses.Add(newStatus);
 

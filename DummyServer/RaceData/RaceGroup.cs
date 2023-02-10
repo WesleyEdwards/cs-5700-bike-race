@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DummyServer
 {
     [Serializable]
-    internal class RaceGroup
+    public class RaceGroup
     {
         private List<Racer> racerList;
 

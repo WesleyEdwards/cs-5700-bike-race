@@ -11,11 +11,11 @@ using System.Xml.Linq;
 namespace DummyServer
 {
 
-    internal class RaceGroupInfo
+    public class RaceGroupInfo
     {
         public RaceGroup[] raceGroups { get; set; }
         public Racer[] racers { get; set; }
-        public RaceGroupInfo()
+        public RaceGroupInfo(string groupPath, string racerPath)
         {
             var groupsPath = @".\Groups.csv";
             var racersPath = @".\Racers.csv";

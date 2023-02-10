@@ -16,8 +16,16 @@ namespace DummyServer
     {
         static void Main(string[] args)
         {
-            // This dummy server receives RacerStatus Messages from the simulator
-            // and simply prints them to the screen
+
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+
+            Form1 form1 = new Form1();
+
+            Form1Observer form1Observer = new Form1Observer(form1);
+
+            Application.Run(form1);
+
 
             int[] racerArray = new int[] { 101, 102 };
 
