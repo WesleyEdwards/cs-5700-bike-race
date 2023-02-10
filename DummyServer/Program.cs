@@ -19,8 +19,12 @@ namespace DummyServer
             // This dummy server receives RacerStatus Messages from the simulator
             // and simply prints them to the screen
 
+            int[] racerArray = new int[] { 101, 102 };
+
             DataReceiver receiver = new DataReceiver();
-            CheatObserver cheatObserver = new CheatObserver(receiver.dataStore);
+            CheatObserver cheatObserver = new CheatObserver(receiver);
+            // RacerObserver racerObserver = new RacerObserver(receiver, racerArray);
+
 
             receiver.Start();
 

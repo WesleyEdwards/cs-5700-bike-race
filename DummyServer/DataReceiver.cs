@@ -12,17 +12,13 @@ using Messages;
 
 namespace DummyServer
 {
-    internal class DataReceiver
+    internal class DataReceiver: IReceiver
     {
         private UdpClient udpClient;
         private bool keepGoing;
         private Thread myRunThread;
-        public DataStore dataStore;
 
-        public DataReceiver()
-        {
-            dataStore = new DataStore();
-        }
+
         public void Start()
         {
             udpClient = new UdpClient(14000);
@@ -51,9 +47,7 @@ namespace DummyServer
                         RacerStatus statusMessage = RacerStatus.Decode(messageByes);
                         if (statusMessage != null)
                         {
-                            dataStore.ReceiveInfo(statusMessage);
-                            // A non-dummy server would do something intelligent with the message,
-                            // like lookup the racer and update the last sensor and time
+                            this.ReceiveInfo(statusMessage);
                         }
                     }
                 }
@@ -64,5 +58,11 @@ namespace DummyServer
                 }
             }
         }
+        public void ReceiveInfo(RacerStatus status)
+        { 
+            UpdateMessage(status);
+        }
+
+        public event Action<RacerStatus> UpdateMessage;
     }
 }
