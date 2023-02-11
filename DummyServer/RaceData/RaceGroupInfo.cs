@@ -17,10 +17,13 @@ namespace DummyServer
         public Racer[] racers { get; set; }
         public RaceGroupInfo(string groupPath, string racerPath)
         {
-            var groupsPath = @".\Groups.csv";
-            var racersPath = @".\Racers.csv";
-
-            RaceGroup[] readGroups = File.ReadAllLines(groupsPath)
+            var groups = groupPath == "" ? @".\Groups.csv" : groupPath;
+            var racers = racerPath == "" ? @".\Racers.csv" : racerPath;
+            GetCSVInfo(groups, racers);
+        }
+        private void GetCSVInfo(string groupPath, string racerPath)
+        {
+            RaceGroup[] readGroups = File.ReadAllLines(groupPath)
                  .Select(line => line.Split(','))
                  .Select(group => new RaceGroup
                  {
@@ -33,7 +36,7 @@ namespace DummyServer
                  .ToArray();
 
 
-            Racer[] readRacers = File.ReadAllLines(racersPath)
+            Racer[] readRacers = File.ReadAllLines(racerPath)
                  .Select(line => line.Split(','))
                  .Select(racer => new Racer
                  {
@@ -57,7 +60,6 @@ namespace DummyServer
                     }
                 }
             }
-
         }
 
         public Racer FindRacer(RacerStatus status)

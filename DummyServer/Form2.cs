@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,7 @@ namespace DummyServer
         {
             InitializeComponent();
             this.racerInfo = info;
+            Load_Listview();
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -35,5 +37,20 @@ namespace DummyServer
         {
             Console.WriteLine(racerInfo.racers[0].FirstName);
         }
+
+        private void Load_Listview()
+        {
+            foreach (var racer in this.racerInfo.racers)
+            {
+                string[] row = { racer.FirstName, racer.RaceBibNumber.ToString() };
+                var listViewItem = new ListViewItem(row);
+                listView1.Items.Add(listViewItem);
+            }
+
+
+            
+
+        }
+
     }
 }
