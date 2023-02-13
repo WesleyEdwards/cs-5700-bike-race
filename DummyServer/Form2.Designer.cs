@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.racersBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.raceGroupInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
@@ -38,8 +37,8 @@
             this.racersBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.raceGroupInfoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.listView1 = new System.Windows.Forms.ListView();
-            this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.BibNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.racersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raceGroupInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racersBindingSource1)).BeginInit();
@@ -54,15 +53,6 @@
             this.label1.Size = new System.Drawing.Size(113, 16);
             this.label1.TabIndex = 0;
             this.label1.Text = "Create Observers";
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 16;
-            this.listBox1.Location = new System.Drawing.Point(554, 79);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(207, 308);
-            this.listBox1.TabIndex = 1;
             // 
             // racersBindingSource
             // 
@@ -107,24 +97,25 @@
             this.BibNumber,
             this.NameColumn});
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(22, 79);
+            this.listView1.Location = new System.Drawing.Point(478, 79);
             this.listView1.Name = "listView1";
             this.listView1.Size = new System.Drawing.Size(310, 256);
             this.listView1.TabIndex = 4;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
+            // BibNumber
+            // 
+            this.BibNumber.DisplayIndex = 1;
+            this.BibNumber.Text = "Bib";
+            this.BibNumber.Width = 87;
             // 
             // NameColumn
             // 
             this.NameColumn.DisplayIndex = 0;
             this.NameColumn.Text = "Name";
-            this.NameColumn.Width = 79;
-            // 
-            // BibNumber
-            // 
-            this.BibNumber.DisplayIndex = 1;
-            this.BibNumber.Text = "Bib Number";
-            this.BibNumber.Width = 87;
+            this.NameColumn.Width = 164;
             // 
             // Form2
             // 
@@ -134,7 +125,6 @@
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Name = "Form2";
             this.Text = "Control Panel";
@@ -151,7 +141,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.BindingSource racersBindingSource;

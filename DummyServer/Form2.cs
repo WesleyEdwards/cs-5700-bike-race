@@ -17,9 +17,6 @@ namespace DummyServer
         private readonly List<RaceGroup> _knownGroups = new List<RaceGroup>();
         private RaceGroupInfo racerInfo;
         private CheatObserver _selectedObserver;
-        private string groupsPath { get; set; }
-        private string racersPath { get; set; }
-
 
         public Form2(RaceGroupInfo info)
         {
@@ -42,15 +39,19 @@ namespace DummyServer
         {
             foreach (var racer in this.racerInfo.racers)
             {
-                string[] row = { racer.FirstName, racer.RaceBibNumber.ToString() };
+                string[] row = { racer.RaceBibNumber.ToString(), $"{racer.FirstName} {racer.LastName}" };
                 var listViewItem = new ListViewItem(row);
                 listView1.Items.Add(listViewItem);
             }
 
 
-            
+
 
         }
 
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
