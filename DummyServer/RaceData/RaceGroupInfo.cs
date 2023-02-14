@@ -17,8 +17,8 @@ namespace DummyServer
         public Racer[] racers { get; set; }
         public RaceGroupInfo(string groupPath, string racerPath)
         {
-            var groups = groupPath == "" ? @".\Groups.csv" : groupPath;
-            var racers = racerPath == "" ? @".\Racers.csv" : racerPath;
+            var groups = groupPath;
+            var racers = racerPath;
             GetCSVInfo(groups, racers);
         }
         private void GetCSVInfo(string groupPath, string racerPath)

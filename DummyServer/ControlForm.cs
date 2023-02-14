@@ -13,12 +13,14 @@ namespace DummyServer
         private readonly List<RaceObserver> _knownDisplays = new List<RaceObserver>();
         private RaceObserver _selectedObserver;
         private RaceGroupInfo racerInfo;
+        public DataReceiver receiver;
 
-        public ControlForm(RaceGroupInfo info)
+        public ControlForm(RaceGroupInfo info, DataReceiver receiverArgs)
         {
             InitializeComponent();
             this.racerInfo = info;
             this.Load_ListView();
+            this.receiver = receiverArgs;
         }
 
         private void RefreshObversersListView()
@@ -128,7 +130,7 @@ namespace DummyServer
 
             if (modalDialogForm.ShowDialog() != DialogResult.OK) return;
 
-            var observer = (modalDialogForm.ObserverType == "L") ? (RaceObserver)new ListDisplay() : (RaceObserver)new ListDisplay(); //  : new GraphicalDisplay();
+            var observer = (modalDialogForm.ObserverType == "B") ? (RaceObserver)new ListDisplay(this.receiver) : (RaceObserver)new ListDisplay(this.receiver); //  : new GraphicalDisplay();
             observer.Title = modalDialogForm.ObserverTitle;
             _knownDisplays.Add(observer);
             observer.Show();

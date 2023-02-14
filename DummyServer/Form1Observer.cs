@@ -10,9 +10,10 @@ namespace DummyServer
     internal class Form1Observer
     {
         RaceGroupInfo raceGroups { get; set; }
-        public Form1Observer(Form1 form1)
+        DataReceiver receiver;
+        public Form1Observer(Form1 form1, DataReceiver receiver)
         {
-
+            this.receiver = receiver;
             form1.SubmitRacerPaths += GetInfo;
         }
         public void GetInfo(string[] list)
@@ -22,7 +23,7 @@ namespace DummyServer
             //Form2 form2 = new Form2(newRaceGroups);
             //form2.Show();
 
-            ControlForm ctrlForm = new ControlForm(newRaceGroups);
+            ControlForm ctrlForm = new ControlForm(newRaceGroups, receiver);
             ctrlForm.Show();
 
             // if (modalDialogForm.ShowDialog() != DialogResult.OK) return;

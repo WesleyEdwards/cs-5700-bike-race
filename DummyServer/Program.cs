@@ -20,16 +20,14 @@ namespace DummyServer
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
+            DataReceiver receiver = new DataReceiver();
             Form1 form1 = new Form1();
 
-            Form1Observer form1Observer = new Form1Observer(form1);
+            Form1Observer form1Observer = new Form1Observer(form1, receiver);
 
+            
             Application.Run(form1);
 
-
-            int[] racerArray = new int[] { 101, 102 };
-
-            DataReceiver receiver = new DataReceiver();
             CheatObserver cheatObserver = new CheatObserver(receiver);
             // RacerObserver racerObserver = new RacerObserver(receiver, racerArray);
 

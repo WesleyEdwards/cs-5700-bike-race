@@ -85,6 +85,8 @@
             this.groupsTextBox.Name = "groupsTextBox";
             this.groupsTextBox.Size = new System.Drawing.Size(609, 22);
             this.groupsTextBox.TabIndex = 4;
+            this.groupsTextBox.Text = "C:\\Users\\User\\Documents\\wesley\\random\\cs-5700-bike-race\\Groups.csv";
+            this.groupsTextBox.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.groupsTextBox_MaskInputRejected);
             // 
             // racersTextBox
             // 
@@ -92,6 +94,7 @@
             this.racersTextBox.Name = "racersTextBox";
             this.racersTextBox.Size = new System.Drawing.Size(609, 22);
             this.racersTextBox.TabIndex = 5;
+            this.racersTextBox.Text = "C:\\Users\\User\\Documents\\wesley\\random\\cs-5700-bike-race\\Racers.csv";
             // 
             // guessButton
             // 

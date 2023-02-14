@@ -56,5 +56,10 @@ namespace DummyServer
         {
 
         }
+
+        private void groupsTextBox_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
+        {
+
+        }
     }
 }

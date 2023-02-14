@@ -69,12 +69,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1Observer.cs" />
-    <Compile Include="Form2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form2.Designer.cs">
-      <DependentUpon>Form2.cs</DependentUpon>
-    </Compile>
     <Compile Include="ObserverCreationForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,14 +85,6 @@
     <Compile Include="Subject.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\SensorSimulator\bin\Debug\Groups.csv">
-      <Link>Groups.csv</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="..\SensorSimulator\bin\Debug\Racers.csv">
-      <Link>Racers.csv</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="App.config" />
     <None Include="Properties\DataSources\RaceGroupInfo.datasource" />
   </ItemGroup>
@@ -114,9 +100,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form2.resx">
-      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListDisplay.resx">
       <DependentUpon>ListDisplay.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Messages;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
@@ -7,11 +8,16 @@ namespace DummyServer
 {
     public partial class ListDisplay : RaceObserver
     {
-        public ListDisplay()
+        public ListDisplay(DataReceiver receiver)
         {
+            receiver.UpdateMessage += RefreshDisplay;
             InitializeComponent();
         }
 
+        public void RefreshDisplay(RacerStatus status)
+        {
+            Console.WriteLine("asdf");
+        }
         protected override void RefreshDisplay()
         {
             SuspendLayout();

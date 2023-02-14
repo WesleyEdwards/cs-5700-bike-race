@@ -12,7 +12,7 @@ using Messages;
 
 namespace DummyServer
 {
-    internal class DataReceiver: IReceiver
+    public class DataReceiver: IReceiver
     {
         private UdpClient udpClient;
         private bool keepGoing;

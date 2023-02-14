@@ -26,7 +26,7 @@ namespace DummyServer
             DialogResult = DialogResult.Cancel;
         }
 
-        public string ObserverType => bigScreenRadioButton.Checked ? "L" : "C";
+        public string ObserverType => bigScreenRadioButton.Checked ? "B" : "C";
 
         private void graphicalTypeRadioButton_CheckedChanged(object sender, EventArgs e)
         {
