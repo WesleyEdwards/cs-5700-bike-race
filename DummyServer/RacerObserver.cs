@@ -26,10 +26,10 @@ namespace DummyServer
             {
                 if (status.RacerBibNumber == bib)
                 {
-                    Racer racer = raceGroups.FindRacer(status);
+                    RaceInformation racer = raceGroups.FindRacer(status.RacerBibNumber);
                     if (racer != null)
                     {
-                        Console.WriteLine(racer.FirstName);
+                        Console.WriteLine(racer.name);
                     }
                 }
             }

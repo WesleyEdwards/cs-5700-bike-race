@@ -11,15 +11,15 @@ using System.Xml.Linq;
 namespace DummyServer
 {
 
+
+
     public class RaceGroupInfo
     {
         public RaceGroup[] raceGroups { get; set; }
-        public Racer[] racers { get; set; }
+        public List<Racer> racers { get; set; }
         public RaceGroupInfo(string groupPath, string racerPath)
         {
-            var groups = groupPath;
-            var racers = racerPath;
-            GetCSVInfo(groups, racers);
+            GetCSVInfo(groupPath, racerPath);
         }
         private void GetCSVInfo(string groupPath, string racerPath)
         {
@@ -36,7 +36,7 @@ namespace DummyServer
                  .ToArray();
 
 
-            Racer[] readRacers = File.ReadAllLines(racerPath)
+            List<Racer> readRacers = File.ReadAllLines(racerPath)
                  .Select(line => line.Split(','))
                  .Select(racer => new Racer
                  {
@@ -44,37 +44,46 @@ namespace DummyServer
                      LastName = racer[1],
                      RaceBibNumber = Int32.Parse(racer[2]),
                      groupId = Int32.Parse(racer[3]),
-                 })
-                 .ToArray();
+                 }).ToList();
 
             this.raceGroups = readGroups;
             this.racers = readRacers;
 
-            foreach (Racer racer in this.racers)
-            {
-                foreach (RaceGroup group in this.raceGroups)
-                {
-                    if (racer.groupId == group.Id)
-                    {
-                        group.AddRacer(racer);
-                    }
-                }
-            }
+            //foreach (Racer racer in this.racers)
+            //{
+            //    foreach (RaceGroup group in this.raceGroups)
+            //    {
+            //        if (racer.groupId == group.Id)
+            //        {
+            //            group.AddRacer(racer);
+            //        }
+            //    }
+            //}
         }
 
-        public Racer FindRacer(RacerStatus status)
+        public RaceInformation FindRacer(int bibNumber)
         {
-            foreach (RaceGroup group in raceGroups)
+            foreach (var race in this.racers)
             {
-                foreach (Racer racer in group.Racers)
+
+                if (race.RaceBibNumber == bibNumber)
                 {
-                    if (racer.RaceBibNumber == status.RacerBibNumber)
-                    {
-                        return racer;
-                    }
+                    return new RaceInformation(race.FirstName, race.RaceBibNumber);
                 }
             }
-            return null;
+
+            return new RaceInformation("Heck man", bibNumber); 
         }
     }
+    public class RaceInformation
+    {
+        public string name;
+        public int bib;
+        public RaceInformation(string name, int bib)
+        {
+            this.name = name;
+            this.bib = bib;
+        }
+    }
+
 }

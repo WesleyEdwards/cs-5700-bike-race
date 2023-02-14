@@ -8,28 +8,57 @@ namespace DummyServer
 {
     public partial class ListDisplay : RaceObserver
     {
-        public ListDisplay(DataReceiver receiver)
+        public RaceGroupInfo information;
+        public CheatObserver CheatCalculator { get; set; }
+        public List<RaceInformation> cachedCheats { get; set; } = new List<RaceInformation>();
+        public ListDisplay(DataReceiver receiver, RaceGroupInfo information)
         {
+            this.CheatCalculator = new CheatObserver(information.racers);
+            this.information = information;
             receiver.UpdateMessage += RefreshDisplay;
             InitializeComponent();
         }
 
         public void RefreshDisplay(RacerStatus status)
         {
-            Console.WriteLine("asdf");
+            this.CheatCalculator.UpdateMessage(status);
+            this.RefreshDisplay();
         }
         protected override void RefreshDisplay()
         {
             SuspendLayout();
+
+            if (cachedCheats.Count >= CheatCalculator.cheaters.Count) { return; }
+
             RemoveUntrackedBalls();
-            //foreach (var ball in BallsBeingObserved)
-            //{
-            //    var index = FindIndex(ball);
-            //    if (index==-1)
-            //        ballListView.Items.Add(CreateListViewItem(ball));
-            //    else
-            //        UpdateListViewItem(ball, ballListView.Items[index]);
-            //}
+
+            foreach (var stat in this.CheatCalculator.cheaters)
+            {
+                RaceInformation myRacer = information.FindRacer(stat.RacerBibNumber);
+
+                var found = cachedCheats.Contains(myRacer);
+                if (!found)
+                {
+                    cachedCheats.Add(myRacer);
+                }
+
+                if (myRacer == null)
+                {
+                    Console.WriteLine("Crap");
+                    cachedCheats.Add(new RaceInformation("asdf", 2));
+                    continue;
+                }
+                string[] row = { myRacer.bib.ToString(), myRacer.name };
+                var listViewItem = new ListViewItem(row) { Tag = myRacer.bib };
+                //string[] row = { stat.RacerBibNumber.ToString(), $"NAME" };
+                //var listViewItem = new ListViewItem(row);
+
+
+
+                ballListView.Items.Add(listViewItem);
+            }
+
+
             ResumeLayout();
         }
 
@@ -41,16 +70,18 @@ namespace DummyServer
 
         private void RemoveUntrackedBalls()
         {
-            var removeList = new List<int>();
-            for (var i = ballListView.Items.Count - 1; i >= 0; i--)
-            {
-                if (IsBallBeingObserved((int) ballListView.Items[i].Tag)) continue;
+            ballListView.Items.Clear();
 
-                removeList.Add(i);
-            }
+            //var removeList = new List<int>();
+            //for (var i = ballListView.Items.Count - 1; i >= 0; i--)
+            //{
+            //    if (IsBallBeingObserved((int)ballListView.Items[i].Tag)) continue;
 
-            foreach (var index in removeList)
-                ballListView.Items.RemoveAt(index);
+            //    removeList.Add(i);
+            //}
+
+            //foreach (var index in removeList)
+            //    ballListView.Items.RemoveAt(index);
         }
 
         //private int FindIndex(Ball ball)

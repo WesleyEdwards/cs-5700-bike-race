@@ -7,24 +7,27 @@ using System.Threading.Tasks;
 
 namespace DummyServer
 {
-    internal class CheatObserver
+    public class CheatObserver
     {
-        RaceGroupInfo raceGroups;
-        List<RacerStatus> cheaters;
+        public List<RacerStatus> cheaters { get; }
         List<RacerStatus> statuses;
         List<PossibleCheat> possibleCheats;
-        public CheatObserver(IReceiver receiver)
+        List<Racer> listOfRacers = new List<Racer>();
+        public List<Racer> cheaterBikers = new List<Racer>();
+        public CheatObserver(List<Racer> racers)
         {
             this.statuses = new List<RacerStatus>();
             this.cheaters = new List<RacerStatus>();
             this.possibleCheats = new List<PossibleCheat>();
-            receiver.UpdateMessage += DataStore_UpdateMessage;
+            foreach (var r in racers)
+            {
+                listOfRacers.Add(r);
+
+            }
         }
 
-        private void DataStore_UpdateMessage(RacerStatus newStatus)
+        public void UpdateMessage(RacerStatus newStatus)
         {
-            if (raceGroups == null) { raceGroups = new RaceGroupInfo("", ""); }
-
             this.statuses.Add(newStatus);
 
             foreach (RacerStatus inList in this.statuses)
@@ -71,8 +74,12 @@ namespace DummyServer
                     {
                         this.cheaters.Add(stat1);
                         this.cheaters.Add(stat2);
-
                         Console.WriteLine($"{bib1} and {bib2} Flagged for cheating");
+
+                        var b1 = listOfRacers.Find(racer => racer.RaceBibNumber == bib1);
+                        var b2 = listOfRacers.Find(racer => racer.RaceBibNumber == bib2);
+                        this.cheaterBikers.Add(b1);
+                        this.cheaterBikers.Add(b2);
                     }
                 }
             }
@@ -88,7 +95,13 @@ namespace DummyServer
             }
             return false;
         }
+        public Racer findBiker(int bib)
+        {
+            return cheaterBikers.Find(r => r.RaceBibNumber.Equals(bib));
+        }
+
     }
+
 
     class PossibleCheat
     {

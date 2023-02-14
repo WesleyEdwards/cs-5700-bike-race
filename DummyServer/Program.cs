@@ -25,14 +25,12 @@ namespace DummyServer
 
             Form1Observer form1Observer = new Form1Observer(form1, receiver);
 
-            
+            receiver.Start();
+
             Application.Run(form1);
 
-            CheatObserver cheatObserver = new CheatObserver(receiver);
-            // RacerObserver racerObserver = new RacerObserver(receiver, racerArray);
-
-
-            receiver.Start();
+            // CheatObserver cheatObserver = new CheatObserver(receiver);
+            // RacerObserver racerObserver = new RacerObserver(receiver, racerArray)
 
 
 

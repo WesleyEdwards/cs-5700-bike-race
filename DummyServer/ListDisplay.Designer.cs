@@ -40,7 +40,7 @@
             this.racerName});
             this.ballListView.HideSelection = false;
             this.ballListView.Location = new System.Drawing.Point(32, 32);
-            this.ballListView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ballListView.Margin = new System.Windows.Forms.Padding(4);
             this.ballListView.Name = "ballListView";
             this.ballListView.Size = new System.Drawing.Size(695, 419);
             this.ballListView.TabIndex = 0;
@@ -49,7 +49,7 @@
             // 
             // idColumnHeader
             // 
-            this.idColumnHeader.Text = "Id";
+            this.idColumnHeader.Text = "Bib";
             this.idColumnHeader.Width = 52;
             // 
             // racerName
@@ -63,7 +63,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 481);
             this.Controls.Add(this.ballListView);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ListDisplay";
             this.Text = "BallListDisplay";
             this.Load += new System.EventHandler(this.ListDisplay_Load);

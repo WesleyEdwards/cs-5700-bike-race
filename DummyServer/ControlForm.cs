@@ -36,7 +36,6 @@ namespace DummyServer
         private void RefreshBallLists()
         {
             observedBallsListView.Items.Clear();
-            // otherBallsListView.Items.Clear();
 
             if (_selectedObserver != null)
                 observedBallsLabel.Text = @"Subjects of " + _selectedObserver.Title;
@@ -130,7 +129,7 @@ namespace DummyServer
 
             if (modalDialogForm.ShowDialog() != DialogResult.OK) return;
 
-            var observer = (modalDialogForm.ObserverType == "B") ? (RaceObserver)new ListDisplay(this.receiver) : (RaceObserver)new ListDisplay(this.receiver); //  : new GraphicalDisplay();
+            var observer = (modalDialogForm.ObserverType == "B") ? (RaceObserver)new ListDisplay(this.receiver, this.racerInfo) : (RaceObserver)new ListDisplay(this.receiver, this.racerInfo); //  : new GraphicalDisplay();
             observer.Title = modalDialogForm.ObserverTitle;
             _knownDisplays.Add(observer);
             observer.Show();
