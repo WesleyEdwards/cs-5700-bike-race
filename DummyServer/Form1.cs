@@ -8,12 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DummyServer
 {
     public partial class Form1 : Form
     {
-        
+
         public string enteredGroupPath { get; set; }
         public string enteredRacersPath { get; set; }
 
@@ -43,10 +44,15 @@ namespace DummyServer
             enteredGroupPath = groupsTextBox.Text;
             enteredRacersPath = racersTextBox.Text;
 
-            this.SubmitRacerPaths(new string[] { enteredGroupPath,enteredRacersPath });
+            this.SubmitRacerPaths(new string[] { enteredGroupPath, enteredRacersPath });
         }
 
         private void guessSubmit_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
         {
 
         }

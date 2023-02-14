@@ -32,7 +32,25 @@ namespace DummyServer
 
         private void create_Observer(object sender, EventArgs e)
         {
-            Console.WriteLine(racerInfo.racers[0].FirstName);
+            
+                // var modalDialogForm = new ObserverCreationForm
+                // {
+                    // Text = @"New Observer",
+                    // ObserverTitle = $"Observer #{_knownDisplays.Count + 1}"
+                // };
+                // 
+                // if (modalDialogForm.ShowDialog() != DialogResult.OK) return;
+                // 
+                // var observer = (modalDialogForm.ObserverType == "L") ? (BallObserver)new ListDisplay() : new GraphicalDisplay();
+                // observer.Title = modalDialogForm.ObserverTitle;
+                // _knownDisplays.Add(observer);
+                // observer.Show();
+                // 
+                // _selectedObserver = null;
+                // observersListView.SelectedIndices.Clear();
+                // RefreshObversersListView();
+                // RefreshBallLists();
+            
         }
 
         private void Load_Listview()

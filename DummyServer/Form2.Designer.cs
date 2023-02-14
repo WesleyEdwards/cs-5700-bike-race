@@ -39,6 +39,7 @@
             this.listView1 = new System.Windows.Forms.ListView();
             this.BibNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NameColumn = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.racersBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.raceGroupInfoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.racersBindingSource1)).BeginInit();
@@ -117,11 +118,20 @@
             this.NameColumn.Text = "Name";
             this.NameColumn.Width = 164;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(40, 373);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(159, 24);
+            this.comboBox1.TabIndex = 5;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
@@ -150,5 +160,6 @@
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.ColumnHeader BibNumber;
         private System.Windows.Forms.ColumnHeader NameColumn;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

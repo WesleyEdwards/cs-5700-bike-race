@@ -19,8 +19,11 @@ namespace DummyServer
         {
             RaceGroupInfo newRaceGroups = new RaceGroupInfo(list[0], list[1]);
 
-            Form2 form2 = new Form2(newRaceGroups);
-            form2.Show();
+            //Form2 form2 = new Form2(newRaceGroups);
+            //form2.Show();
+
+            ControlForm ctrlForm = new ControlForm(newRaceGroups);
+            ctrlForm.Show();
 
             // if (modalDialogForm.ShowDialog() != DialogResult.OK) return;
 
