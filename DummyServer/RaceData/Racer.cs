@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace DummyServer
 {
-    public class Racer
+    public class Racer: Subject
     {
         public string FirstName { get; set; }
+        public virtual int Id { get; }
         public string LastName { get; set; }
         public int RaceBibNumber { get; set; }
         public int groupId { get; set; }
