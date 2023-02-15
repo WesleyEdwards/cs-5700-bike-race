@@ -101,8 +101,6 @@ namespace DummyServer
         }
 
     }
-
-
     class PossibleCheat
     {
         public PossibleCheat(RacerStatus status1, RacerStatus status2)

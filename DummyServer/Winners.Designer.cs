@@ -66,6 +66,7 @@
             this.Controls.Add(this.ballListView);
             this.Name = "Winners";
             this.Text = "Winners";
+            this.Load += new System.EventHandler(this.Winners_Load);
             this.ResumeLayout(false);
 
         }

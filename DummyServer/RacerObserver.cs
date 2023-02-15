@@ -26,7 +26,7 @@ namespace DummyServer
             {
                 if (status.RacerBibNumber == bib)
                 {
-                    RaceInformation racer = raceGroups.FindRacer(status.RacerBibNumber);
+                    RaceInformation racer = raceGroups.FindRacer(status);
                     if (racer != null)
                     {
                         Console.WriteLine(racer.name);

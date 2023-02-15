@@ -48,46 +48,21 @@ namespace DummyServer
 
             this.raceGroups = readGroups;
             this.racers = readRacers;
-
-            //foreach (Racer racer in this.racers)
-            //{
-            //    foreach (RaceGroup group in this.raceGroups)
-            //    {
-            //        if (racer.groupId == group.Id)
-            //        {
-            //            group.AddRacer(racer);
-            //        }
-            //    }
-            //}
         }
 
-        public RaceInformation FindRacer(int bibNumber)
+        public RaceInformation FindRacer(RacerStatus status)
         {
-            foreach (var race in this.racers)
-            {
-
-                if (race.RaceBibNumber == bibNumber)
-                {
-                    return new RaceInformation(race.FirstName, race.RaceBibNumber);
-                }
-            }
-
-            return new RaceInformation("Heck man", bibNumber); 
+            Racer racer = this.racers.Find(it => it.RaceBibNumber == status.RacerBibNumber);
+            return new RaceInformation($"{racer.FirstName} {racer.LastName}", status);
         }
     }
     public class RaceInformation
     {
         public string name;
-        public int bib;
         public RacerStatus status;
-        public RaceInformation(string name, int bib)
+        public RaceInformation(string name, RacerStatus status)
         {
             this.name = name;
-            this.bib = bib;
-        } public RaceInformation(string name, int bib, RacerStatus status)
-        {
-            this.name = name;
-            this.bib = bib;
             this.status = status;
         }
     }

@@ -32,13 +32,13 @@ namespace DummyServer
             { this.cachedWinners.Add(win); }
 
 
-            var racer = this.information.FindRacer(status.RacerBibNumber);
+            var racer = this.information.FindRacer(status);
             if (racer == null) { return; }
             var found = this.winners.Contains(racer);
 
             if (!found)
             {
-                RaceInformation newRacer = new RaceInformation(racer.name, racer.bib, status);
+                RaceInformation newRacer = new RaceInformation(racer.name, status);
                 this.SortWinners(newRacer);
             }
 
@@ -51,9 +51,9 @@ namespace DummyServer
             RemoveUntrackedBalls();
             foreach (var stat in this.winners)
             {
-                var raceMan = this.information.FindRacer(stat.bib);
-                string[] row = { raceMan.bib.ToString(), raceMan.name };
-                var listViewItem = new ListViewItem(row) { Tag = raceMan.bib };
+                var raceMan = this.information.FindRacer(stat.status);
+                string[] row = { raceMan.status.RacerBibNumber.ToString(), raceMan.name };
+                var listViewItem = new ListViewItem(row) { Tag = raceMan.status.RacerBibNumber };
                 ballListView.Items.Add(listViewItem);
             }
 
@@ -96,10 +96,15 @@ namespace DummyServer
             { return false; }
             foreach (var win in this.winners)
             {
-                if (win.bib != this.cachedWinners[this.winners.IndexOf(win)].bib)
+                if (win.status.RacerBibNumber != this.cachedWinners[this.winners.IndexOf(win)].status.RacerBibNumber)
                 { return false; }
             }
             return true;
+        }
+
+        private void Winners_Load(object sender, EventArgs e)
+        {
+
         }
     }
 
