@@ -54,3 +54,4 @@ C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\Du
 C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.ObserverCreationForm.resources
 C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.RaceObserver.resources
 C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.ListDisplay.resources
+C:\Users\User\Documents\wesley\random\cs-5700-bike-race\DummyServer\obj\Debug\DummyServer.Winners.resources

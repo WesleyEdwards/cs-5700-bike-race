@@ -79,10 +79,16 @@ namespace DummyServer
     {
         public string name;
         public int bib;
+        public RacerStatus status;
         public RaceInformation(string name, int bib)
         {
             this.name = name;
             this.bib = bib;
+        } public RaceInformation(string name, int bib, RacerStatus status)
+        {
+            this.name = name;
+            this.bib = bib;
+            this.status = status;
         }
     }
 

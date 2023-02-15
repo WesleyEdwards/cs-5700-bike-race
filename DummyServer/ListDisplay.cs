@@ -28,7 +28,7 @@ namespace DummyServer
         {
             SuspendLayout();
 
-            if (cachedCheats.Count >= CheatCalculator.cheaters.Count) { return; }
+            if (cachedCheats.Count == CheatCalculator.cheaters.Count) { return; }
 
             RemoveUntrackedBalls();
 
@@ -37,16 +37,14 @@ namespace DummyServer
                 RaceInformation myRacer = information.FindRacer(stat.RacerBibNumber);
 
                 var found = cachedCheats.Contains(myRacer);
-                if (!found)
+                if (!found && myRacer != null)
                 {
                     cachedCheats.Add(myRacer);
                 }
 
-                if (myRacer == null)
+                if (myRacer == null && !found)
                 {
-                    Console.WriteLine("Crap");
                     cachedCheats.Add(new RaceInformation("asdf", 2));
-                    continue;
                 }
                 string[] row = { myRacer.bib.ToString(), myRacer.name };
                 var listViewItem = new ListViewItem(row) { Tag = myRacer.bib };

@@ -83,6 +83,12 @@
     <Compile Include="RaceData\RaceGroupInfo.cs" />
     <Compile Include="RacerObserver.cs" />
     <Compile Include="Subject.cs" />
+    <Compile Include="Winners.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Winners.Designer.cs">
+      <DependentUpon>Winners.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -109,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RaceObserver.resx">
       <DependentUpon>RaceObserver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Winners.resx">
+      <DependentUpon>Winners.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
