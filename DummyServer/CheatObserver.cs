@@ -1,23 +1,18 @@
 ﻿using Messages;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace DummyServer
 {
     public class CheatObserver
     {
-        public List<RacerStatus> cheaters { get; }
         List<RacerStatus> statuses;
         List<PossibleCheat> possibleCheats;
         List<Racer> listOfRacers = new List<Racer>();
-        public List<Racer> cheaterBikers = new List<Racer>();
         public CheatObserver(List<Racer> racers)
         {
             this.statuses = new List<RacerStatus>();
-            this.cheaters = new List<RacerStatus>();
             this.possibleCheats = new List<PossibleCheat>();
             foreach (var r in racers)
             {
@@ -26,7 +21,7 @@ namespace DummyServer
             }
         }
 
-        public void UpdateMessage(RacerStatus newStatus)
+        public Cheaters UpdateMessage(RacerStatus newStatus)
         {
             this.statuses.Add(newStatus);
 
@@ -38,12 +33,14 @@ namespace DummyServer
                     {
                         if (withinThreeSec(inList, newStatus))
                         {
-                            checkPossibles(inList, newStatus);
+                            var cheaters = checkPossibles(inList, newStatus);
                             this.possibleCheats.Add(new PossibleCheat(inList, newStatus));
+                            return cheaters;
                         };
                     }
                 }
             }
+            return null;
         }
         private bool inSameGroup(RacerStatus stat1, RacerStatus stat2)
         {
@@ -59,10 +56,8 @@ namespace DummyServer
             if (s2 - s1 < 3 && s2 - s1 > 0) return true;
             return false;
         }
-        private void checkPossibles(RacerStatus stat1, RacerStatus stat2)
+        private Cheaters checkPossibles(RacerStatus stat1, RacerStatus stat2)
         {
-            if (inCheaterList(stat1) && inCheaterList(stat2)) { return; }
-
             foreach (var cheat in this.possibleCheats)
             {
                 var bib1 = cheat.Status1.RacerBibNumber;
@@ -72,32 +67,14 @@ namespace DummyServer
                 {
                     if (bib2 == stat1.RacerBibNumber || bib2 == stat2.RacerBibNumber)
                     {
-                        this.cheaters.Add(stat1);
-                        this.cheaters.Add(stat2);
-                        Console.WriteLine($"{bib1} and {bib2} Flagged for cheating");
+                        var racer1 = listOfRacers.Find(it => it.RaceBibNumber == bib1);
+                        var racer2 = listOfRacers.Find(it => it.RaceBibNumber == bib2);
 
-                        var b1 = listOfRacers.Find(racer => racer.RaceBibNumber == bib1);
-                        var b2 = listOfRacers.Find(racer => racer.RaceBibNumber == bib2);
-                        this.cheaterBikers.Add(b1);
-                        this.cheaterBikers.Add(b2);
+                        return new Cheaters(new RaceInformation($"{racer1.FirstName} {racer1.LastName}", stat1), new RaceInformation($"{racer2.FirstName} {racer2.LastName}", stat2));
                     }
                 }
             }
-        }
-        private bool inCheaterList(RacerStatus racer)
-        {
-            foreach (var cheater in this.cheaters)
-            {
-                if (cheater.RacerBibNumber == racer.RacerBibNumber)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        public Racer findBiker(int bib)
-        {
-            return cheaterBikers.Find(r => r.RaceBibNumber.Equals(bib));
+            return null;
         }
 
     }
@@ -110,5 +87,16 @@ namespace DummyServer
         }
         public RacerStatus Status1;
         public RacerStatus Status2;
+    }
+
+    public class Cheaters
+    {
+        public RaceInformation info1;
+        public RaceInformation info2;
+        public Cheaters(RaceInformation info1, RaceInformation info2)
+        {
+            this.info1 = info1;
+            this.info2 = info2;
+        }
     }
 }

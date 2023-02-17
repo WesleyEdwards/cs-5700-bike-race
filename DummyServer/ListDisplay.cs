@@ -8,46 +8,43 @@ namespace DummyServer
 {
     public partial class ListDisplay : RaceObserver
     {
-        public RaceGroupInfo information;
         public CheatObserver CheatCalculator { get; set; }
-        public List<int> cachedCheats { get; set; } = new List<int>();
+        public List<Cheaters> cheatersList { get; set; } = new List<Cheaters>();
         public ListDisplay(DataReceiver receiver, RaceGroupInfo information)
         {
             this.CheatCalculator = new CheatObserver(information.racers);
-            this.information = information;
             receiver.UpdateMessage += RefreshDisplay;
             InitializeComponent();
         }
 
         public void RefreshDisplay(RacerStatus status)
         {
-            var r = this.cachedCheats.Find(it => it == status.RacerBibNumber);
-            if (this.cachedCheats.Contains(r)) { return; }
 
-            this.CheatCalculator.UpdateMessage(status);
-            this.RefreshDisplay();
+            Cheaters cheaters = this.CheatCalculator.UpdateMessage(status);
+
+            if (cheaters != null)
+            {
+                this.cheatersList.Add(cheaters);
+                this.RefreshDisplay();
+            }
         }
         protected override void RefreshDisplay()
         {
             SuspendLayout();
 
-            if (cachedCheats.Count == CheatCalculator.cheaters.Count) { return; }
-
             RemoveUntrackedBalls();
 
-            this.cachedCheats.Clear();
-            foreach (var stat in this.CheatCalculator.cheaters)
+            foreach (var stat in this.cheatersList)
             {
-                RaceInformation myRacer = information.FindRacer(stat);
 
-                if (myRacer == null) { continue; }
-                if (this.cachedCheats.Contains(myRacer.status.RacerBibNumber)) { continue; }
-
-                string[] row = { myRacer.status.RacerBibNumber.ToString(), myRacer.name };
-                var listViewItem = new ListViewItem(row) { Tag = myRacer.status.RacerBibNumber };
-
+                string[] row = { stat.info1.status.RacerBibNumber.ToString(), stat.info1.name, stat.info1.status.SensorId.ToString() };
+                var listViewItem = new ListViewItem(row) { Tag = stat.info1.status.RacerBibNumber };
                 ballListView.Items.Add(listViewItem);
-                this.cachedCheats.Add(myRacer.status.RacerBibNumber);
+
+
+                string[] row2 = { stat.info2.status.RacerBibNumber.ToString(), stat.info2.name };
+                var listViewItem2 = new ListViewItem(row2) { Tag = stat.info2.status.RacerBibNumber };
+                cheater2ListView.Items.Add(listViewItem2);
             }
 
             ResumeLayout();
@@ -59,6 +56,6 @@ namespace DummyServer
             StartRefreshTimer();
         }
 
-        private void RemoveUntrackedBalls() { ballListView.Items.Clear(); }
+        private void RemoveUntrackedBalls() { ballListView.Items.Clear(); cheater2ListView.Items.Clear(); }
     }
 }

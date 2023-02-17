@@ -43,7 +43,7 @@ namespace DummyServer
             foreach (var ball in _knownRacers)
             {
                 string[] row = { ball.RaceBibNumber.ToString(), $"{ball.FirstName} {ball.LastName}" };
-                var listViewItem = new ListViewItem(row) { Tag = ball }
+                var listViewItem = new ListViewItem(row) { Tag = ball };
                 if (_selectedObserver != null && ball.Subscribers.Contains(_selectedObserver))
                 {
                     observedBallsListView.Items.Add(listViewItem);
@@ -149,15 +149,6 @@ namespace DummyServer
             }
 
             _knownRacers.Clear();
-        }
-        private void Load_ListView()
-        {
-            foreach (var racer in this.racerInfo.racers)
-            {
-                string[] row = { racer.RaceBibNumber.ToString(), $"{racer.FirstName} {racer.LastName}" };
-                var listViewItem = new ListViewItem(row) { Tag = racer };
-                otherBallsListView.Items.Add(listViewItem);
-            }
         }
     }
 }
