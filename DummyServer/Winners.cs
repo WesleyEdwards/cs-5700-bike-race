@@ -44,9 +44,11 @@ namespace DummyServer
 
             if (areSame()) { return; }
 
-            //this.winners.ForEach(win =>
-            //{ Console.Write(win.status.SensorId.ToString() + " (" + ((int)win.status.Timestamp / 1000).ToString() + "), "); });
-            //Console.WriteLine();
+            this.winners.ForEach(win =>
+            {
+                Console.WriteLine($"{win.name}, {win.status.SensorId.ToString()}, {win.status.Timestamp.ToString()}");
+            });
+
 
             RemoveUntrackedBalls();
             foreach (var stat in this.winners)
@@ -77,13 +79,38 @@ namespace DummyServer
         }
         private void SortWinners(RaceInformation racer)
         {
-            this.winners.Add(racer);
-            this.winners.Sort((a, b) =>
+
+            if (this.winners.Count < 10)
+            { this.winners.Add(racer); }
+            else
             {
-                if (a.status.SensorId > b.status.SensorId)
-                { return -1; }
-                return a.status.Timestamp.CompareTo(b.status.Timestamp);
-            });
+                RaceInformation last = this.winners[winners.Count - 1];
+                if (last != null)
+                {
+                    if (last.status.SensorId < racer.status.SensorId)
+                    {
+                        this.winners.Remove(last);
+                        this.winners.Add(racer);
+                    }
+                    else
+                    {
+                        if (last.status.SensorId == racer.status.SensorId && last.status.Timestamp > racer.status.Timestamp)
+                        {
+                            this.winners.Remove(last);
+                            this.winners.Add(racer);
+                        }
+                    }
+                }
+            }
+            //this.winners.Sort((a, b) =>
+            //{
+            //    if (a.status.SensorId > b.status.SensorId)
+            //    { return 1; }
+            //    return a.status.Timestamp.CompareTo(b.status.Timestamp);
+            //});
+            SortWinners();
+
+            
 
             if (this.winners.Count > 10)
             { this.winners.RemoveAt(10); }
@@ -100,6 +127,26 @@ namespace DummyServer
                 { return false; }
             }
             return true;
+        }
+
+
+        private void SortWinners()
+        {
+
+            // List<RaceInformation> sortedRacers = new List<RaceInformation>();
+
+            this.winners.Sort((r1, r2) =>
+            {
+                if (r1.status.SensorId == r2.status.SensorId)
+                {
+                    return r1.status.Timestamp.CompareTo(r2.status.Timestamp);
+                }
+                else
+                {
+                    return r2.status.SensorId.CompareTo(r1.status.SensorId);
+                }
+            });
+
         }
 
         private void Winners_Load(object sender, EventArgs e)

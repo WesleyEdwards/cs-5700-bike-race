@@ -65,6 +65,10 @@ namespace DummyServer
             this.name = name;
             this.status = status;
         }
+        public void Write(StreamWriter write)
+        {
+            write.WriteLine("RACER Info: {0},{1},{2},{3}", name, status.RacerBibNumber, status.Timestamp, status.SensorId);
+        }
     }
 
 }
