@@ -7,7 +7,7 @@ namespace DummyServer
 {
     public class RaceObserver : Form
     {
-        private readonly Dictionary<int, RaceSubject> _ballsBeingObserved = new Dictionary<int, RaceSubject>();
+        private readonly Dictionary<int, RaceSubject> _racersBeingObserved = new Dictionary<int, RaceSubject>();
 
         protected bool RepaintNeeded;
         private readonly Timer _refreshTester = new Timer();
@@ -23,10 +23,10 @@ namespace DummyServer
 
             lock (_myLock)
             {
-                if (!_ballsBeingObserved.ContainsKey(ball.Id))
-                    _ballsBeingObserved.Add(ball.Id, ball);
+                if (!_racersBeingObserved.ContainsKey(ball.Id))
+                    _racersBeingObserved.Add(ball.Id, ball);
                 else
-                    _ballsBeingObserved[ball.Id] = ball;
+                    _racersBeingObserved[ball.Id] = ball;
             }
 
             RepaintNeeded = true;
@@ -39,8 +39,8 @@ namespace DummyServer
 
             lock (_myLock)
             {
-                if (_ballsBeingObserved.ContainsKey(ball.Id))
-                    _ballsBeingObserved.Remove(ball.Id);
+                if (_racersBeingObserved.ContainsKey(ball.Id))
+                    _racersBeingObserved.Remove(ball.Id);
             }
             RepaintNeeded = true;
         }
@@ -70,16 +70,16 @@ namespace DummyServer
 
         protected void UnregisterFromAllSubjects()
         {
-            var iterator = _ballsBeingObserved.GetEnumerator();
+            var iterator = _racersBeingObserved.GetEnumerator();
             while (iterator.MoveNext())
                 iterator.Current.Value.Unsubscribe(this);
         }
 
-        protected List<RaceSubject> BallsBeingObserved => _ballsBeingObserved.Values.ToList();
+        protected List<RaceSubject> BallsBeingObserved => _racersBeingObserved.Values.ToList();
 
         protected bool IsBallBeingObserved(int id)
         {
-            return _ballsBeingObserved.ContainsKey(id);
+            return _racersBeingObserved.ContainsKey(id);
         }
 
         public void InitializeComponent()
