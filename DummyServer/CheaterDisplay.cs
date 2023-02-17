@@ -1,16 +1,15 @@
-﻿using Messages;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Windows.Forms;
 
 namespace DummyServer
 {
-    public partial class ListDisplay : RaceObserver
+    public partial class CheaterDisplay : RaceObserver
     {
         public CheatObserver CheatCalculator { get; set; }
         public List<Cheaters> cheatersList { get; set; } = new List<Cheaters>();
-        public ListDisplay(DataReceiver receiver, RaceGroupInfo information)
+        public CheaterDisplay(DataReceiver receiver, RaceGroupInfo information)
         {
             this.CheatCalculator = new CheatObserver(information.racers);
             receiver.UpdateMessage += RefreshDisplay;

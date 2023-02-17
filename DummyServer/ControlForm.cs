@@ -123,7 +123,7 @@ namespace DummyServer
 
             if (modalDialogForm.ShowDialog() != DialogResult.OK) return;
 
-            var observer = (modalDialogForm.ObserverType == "C") ? (RaceObserver)new ListDisplay(this.receiver, this.racerInfo) : (RaceObserver)new Winners(this.receiver, this.racerInfo); //  : new GraphicalDisplay();
+            var observer = (modalDialogForm.ObserverType == "C") ? (RaceObserver)new CheaterDisplay(this.receiver, this.racerInfo) : (RaceObserver)new BigScreen(this.receiver, this.racerInfo); //  : new GraphicalDisplay();
             observer.Title = modalDialogForm.ObserverTitle;
             _knownDisplays.Add(observer);
             observer.Show();

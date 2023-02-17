@@ -1,6 +1,6 @@
 ﻿namespace DummyServer
 {
-    partial class ListDisplay
+    partial class CheaterDisplay
     {
         /// <summary>
         /// Required designer variable.

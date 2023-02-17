@@ -1,22 +1,15 @@
-﻿using Messages;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DummyServer
 {
-    public partial class Winners : RaceObserver
+    public partial class BigScreen : RaceObserver
     {
         public RaceGroupInfo information;
         public List<RaceInformation> winners { get; set; } = new List<RaceInformation>();
         public List<RaceInformation> cachedWinners { get; set; } = new List<RaceInformation>();
-        public Winners(DataReceiver receiver, RaceGroupInfo information)
+        public BigScreen(DataReceiver receiver, RaceGroupInfo information)
         {
             this.information = information;
             receiver.UpdateMessage += RefreshDisplay;
@@ -43,11 +36,6 @@ namespace DummyServer
             }
 
             if (areSame()) { return; }
-
-            this.winners.ForEach(win =>
-            {
-                Console.WriteLine($"{win.name}, {win.status.SensorId.ToString()}, {win.status.Timestamp.ToString()}");
-            });
 
 
             RemoveUntrackedBalls();
@@ -102,12 +90,6 @@ namespace DummyServer
                     }
                 }
             }
-            //this.winners.Sort((a, b) =>
-            //{
-            //    if (a.status.SensorId > b.status.SensorId)
-            //    { return 1; }
-            //    return a.status.Timestamp.CompareTo(b.status.Timestamp);
-            //});
             SortWinners();
 
             

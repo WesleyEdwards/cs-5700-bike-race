@@ -1,6 +1,6 @@
 ﻿namespace DummyServer
 {
-    partial class Winners
+    partial class BigScreen
     {
         /// <summary>
         /// Required designer variable.

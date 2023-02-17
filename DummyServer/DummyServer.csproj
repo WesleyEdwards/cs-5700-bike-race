@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -44,12 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ListDisplay.cs">
+    <Compile Include="CheaterDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ListDisplay.Designer.cs">
-      <DependentUpon>ListDisplay.cs</DependentUpon>
+    <Compile Include="CheaterDisplay.Designer.cs">
+      <DependentUpon>CheaterDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="RacerStatus.cs" />
     <Compile Include="RaceSubject.cs" />
     <Compile Include="RaceObserver.cs">
       <SubType>Form</SubType>
@@ -81,24 +83,17 @@
     <Compile Include="RaceData\RaceGroup.cs" />
     <Compile Include="RaceData\Racer.cs" />
     <Compile Include="RaceData\RaceGroupInfo.cs" />
-    <Compile Include="RacerObserver.cs" />
     <Compile Include="Subject.cs" />
-    <Compile Include="Winners.cs">
+    <Compile Include="BigScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Winners.Designer.cs">
-      <DependentUpon>Winners.cs</DependentUpon>
+    <Compile Include="BigScreen.Designer.cs">
+      <DependentUpon>BigScreen.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="Properties\DataSources\RaceGroupInfo.datasource" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Messages\Messages.csproj">
-      <Project>{88244493-19f3-4fc8-b859-39742a4291fb}</Project>
-      <Name>Messages</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ControlForm.resx">
@@ -107,8 +102,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ListDisplay.resx">
-      <DependentUpon>ListDisplay.cs</DependentUpon>
+    <EmbeddedResource Include="CheaterDisplay.resx">
+      <DependentUpon>CheaterDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ObserverCreationForm.resx">
       <DependentUpon>ObserverCreationForm.cs</DependentUpon>
@@ -116,8 +111,8 @@
     <EmbeddedResource Include="RaceObserver.resx">
       <DependentUpon>RaceObserver.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Winners.resx">
-      <DependentUpon>Winners.cs</DependentUpon>
+    <EmbeddedResource Include="BigScreen.resx">
+      <DependentUpon>BigScreen.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
